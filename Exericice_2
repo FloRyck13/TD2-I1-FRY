@@ -39,10 +39,19 @@ def compter_occurences(chemin) :
     flux.close()
     occurrences = {}
     total = 0
-    for c in texte():
+    for c in texte :
         if c in occurrences:
             occurrences[c] += 1
         else:
             occurrences[c] = 1
         total += 1
     return occurrences, total
+
+# Question 4 :
+
+def normaliser(occurences, total):
+    for clé in occurences :
+        occurences[clé]=occurences[clé]/total
+
+
+
