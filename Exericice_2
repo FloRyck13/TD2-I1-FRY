@@ -53,5 +53,22 @@ def normaliser(occurences, total):
     for clé in occurences :
         occurences[clé]=occurences[clé]/total
 
+# Question 5 :
+
+def calculer_mse(reference_freqs, texte_freqs, chaine):
+    for langue in reference_freqs:
+        ref = reference_freqs[langue]
+        if chaine is None:
+            caracteres = list(ref.keys())
+        else:
+            caracteres = chaine
+        somme = 0
+        for c in caracteres:
+            observee = texte_freqs.get(c, 0)     # 0 si la lettre est absente du texte
+            attendue = ref.get(c, 0)
+            somme += (observee - attendue) ** 2
+        resultat.append((langue, somme / len(caracteres)))
+    return resultat
+
 
 
