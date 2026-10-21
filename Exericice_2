@@ -30,3 +30,19 @@ def structurer_reference_freqs(data):
     for i in range(len(langues)):
         ref[langues[i]] = dicos[i]
     return ref
+
+# Question 3 :
+
+def compter_occurences(chemin) :
+    flux=open(chemin,"r")
+    texte=flux.read()
+    flux.close()
+    occurrences = {}
+    total = 0
+    for c in texte():
+        if c in occurrences:
+            occurrences[c] += 1
+        else:
+            occurrences[c] = 1
+        total += 1
+    return occurrences, total
