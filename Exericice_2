@@ -1,0 +1,11 @@
+#Question 1 :
+
+import csv
+
+def read_csv(path):
+    fichier = open(path, encoding="utf-8")
+    lecteur = csv.reader(fichier, delimiter=";")
+    data = list(lecteur)
+    fichier.close()
+    return data
+
