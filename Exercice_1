@@ -38,3 +38,32 @@ print(decoder_cesar("extraits/secret1")) #lecture d'un fichier
 
 #Question 3 :
 
+import sys
+from chiffrement_decalage import chiffrer
+
+
+def lire_fichier(chemin):
+    try:
+        with open(chemin, encoding="utf-8") as fichier:
+            return fichier.read()
+    except OSError:
+        sys.stderr.write("Impossible d'ouvrir le fichier " + chemin + "\n")
+        sys.exit(1)
+
+
+def tester_decalages(texte):
+    for dec in range(1, 26):
+        print(f"--- Décalage de chiffrement supposé : {dec} ---")
+        print(chiffrer(texte, -dec))
+        reponse = input("Entrée pour continuer, q pour quitter : ")
+        if reponse.strip().lower() == "q":
+            break
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        sys.stderr.write("Usage : python3 decoder_decalage.py chemin_du_fichier\n")
+        sys.exit(1)
+    tester_decalages(lire_fichier(sys.argv[1]))
+
+#Il faut tester au maximum 25 décalage.
