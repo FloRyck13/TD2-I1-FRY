@@ -1,3 +1,40 @@
-python3 ascii.py extraits/test_comptage
-python3 ascii.py < extraits/test_comptage 
-cat extraits/test_comptage | python3 ascii.py 
+#Question 1 :
+
+#python3 ascii.py extraits/test_comptage
+#python3 ascii.py < extraits/test_comptage 
+#cat extraits/test_comptage | python3 ascii.py
+
+#Question 2 :
+
+import subprocess
+
+"""
+def coder_cesar(s): 
+    resultat = subprocess.run(
+        ["tr", "a-zA-Z", "D-ZABCd-zabc"],
+        input=s,
+        capture_output=True,
+        text=True
+    )
+    return resultat.stdout
+"""
+
+def decoder_cesar(chemin):
+    flux=open(chemin,"r")
+    texte=flux.read()
+    flux.close()
+    resultat = subprocess.run(
+        ["tr", "D-ZABCd-zabc", "a-zA-Z"],
+        input=texte,
+        capture_output=True,
+        text=True
+    )
+
+    return resultat.stdout
+
+print(decoder_cesar("extraits/secret1")) #lecture d'un fichier
+
+#La pionnière invoquée est Margaret Hamilton.
+
+#Question 3 :
+
