@@ -79,9 +79,19 @@ def trier_mse(mse):
     """Trie sur place par score croissant : la meilleure langue est en mse[0]."""
     mse.sort(key=score_du_couple)
 
-# Question 7 :
+# Question 7 et 8 :
  def tracer_mse(mse,chemin):
     pass
 
-# 
+# Question 9 :
+
+def enrichir_reference_freqs(ref,langue,chemin):
+     with open(chemin, encoding="utf-8") as fichier:
+        texte = fichier.read()
+    occurrences, total = compter_occurrences(texte)
+    normaliser(occurrences, total)
+
+    ref[langue] = ref["French"].copy()
+    for c in ref[langue]:
+        ref[langue][c] = occurrences.get(c, 0)
 
