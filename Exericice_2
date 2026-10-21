@@ -70,5 +70,14 @@ def calculer_mse(reference_freqs, texte_freqs, chaine):
         resultat.append((langue, somme / len(caracteres)))
     return resultat
 
+# Question 6 :
+
+def score_du_couple(couple):
+    return couple[1]
+
+def trier_mse(mse):
+    """Trie sur place par score croissant : la meilleure langue est en mse[0]."""
+    mse.sort(key=score_du_couple)
+
 
 

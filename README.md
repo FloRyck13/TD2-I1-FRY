@@ -173,7 +173,7 @@ $$
 (\mathrm{fréquence\ observée}_i-\mathrm{fréquence\ de\ référence}_i)^2
 $$
 
-- Développer une fonction `trier_mse(mse)` permttant de la classer les langues selon le score obtenu à l'aide de la méthode `list.sort(key=foo,reverse=True)`. 
+- Développer une fonction `trier_mse(mse)` permettant de la classer les langues selon le score obtenu à l'aide de la méthode `list.sort(key=foo,reverse=True)`. 
     - Cette méthode est *spécifique aux listes*. À l'issue du tri, la liste est directement *modifiée sur place*.
         - Ne pas confondre *tri sur place* et *tri en place* : le tri sur place indique que la liste de départ est modifiée. Le tri 📌  *en place* est un concept informatique qui indique que le tri une quantité de mémoire auxiliaire *indépendante de la taille de l'entrée*.
     - Elle prend comme argument `key` une *fonction d'un argument* renvoyant la 📌 **clé de tri** : la valeur utilisée pour déterminer l'ordre des éléments lors des comparaisons effectuées avec l'opérateur `<`.
