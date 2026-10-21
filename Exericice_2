@@ -79,5 +79,9 @@ def trier_mse(mse):
     """Trie sur place par score croissant : la meilleure langue est en mse[0]."""
     mse.sort(key=score_du_couple)
 
+# Question 7 :
+ def tracer_mse(mse,chemin):
+    pass
 
+# 
 
